@@ -34,8 +34,9 @@ class Game():
         for i in range(3):
             print("╭――-╮" * 3)
             for j in range(3):
-                print(f"| {
-                      "X" if self.board[i][j] == 2 else "O" if self.board[i][j] == 1 else " "} |", end='')
+                print(f"| {"X" if self.board[i][j] == 2
+                      else "O" if self.board[i][j] == 1
+                      else " "} |", end='')
             print("")
             print("╰―-―╯" * 3)
 
@@ -75,13 +76,14 @@ print("\n Welcome to TicTacToe!")
 
 while game1.win == 0:
 
-    print("To specify the move you want to make, type a value for row,column (like 1,3)")
+    print("""To specify the move you want to make,\
+ type a value for row,column (like 1,3)""")
 
     game1.display_board()
 
     if game1.check_win() == 1:
         print("Player O wins!")
-        choice = input("""Do you want to play again? (pres y for 'yes')
+        choice = input("""Do you want to play again? (press y for 'yes')
 >> """)
         if choice == 'y':
             game1.reload()
